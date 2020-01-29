@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="COAExpress2.SummaryPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<RelativeLayout BackgroundColor="White">
+
+			<!-- Logo Image -->
+			<Image Source="ispace-brand-maximized.png" Opacity="1"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.2,Constant=0}"
+       	 		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.6,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.3,Constant=0}"> 
+			</Image>
+
+			<!-- Background Image -->
+			<Image Source="trifecta-wallpaper-mobile-01.jpg" Opacity=".5"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+			</Image>
+
+			<!-- Finish Button -->
+			<Button Text="Finish" Clicked="OnFinishClicked" BackgroundColor="#47C3D3" TextColor="White"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.52,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.05,Constant=0}"/>
+
+			<!-- Previous Page Button -->
+			<Button Text="Previous" Clicked="OnPreviousPageClicked" BackgroundColor="#47C3D3" TextColor="White"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.18,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.05,Constant=0}"/>
+
+			<!-- Main Container -->
+            <StackLayout 
+            	RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.20,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.7,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.6,Constant=0}">
+				<Frame VerticalOptions="CenterAndExpand" BackgroundColor="#47C3D3" Opacity=".8">
+						<Frame x:Name="summary" >
+							<StackLayout>
+								<Label Text="Success! COAs have been created in InvestigatorSpace.com for:"/>
+								<Label Text="Amendment A"/>
+								<Label Text="Amendment B (US)"/>
+								<Label Text="PDF copies will be emailed to:"/>
+								<Label Text="Dave Young (CRA)"/>
+								<Label Text="Brenda Babson (Coordinator)"/>
+								<Label Text="Marcy Manngers (PI)"/>
+							</StackLayout>
+						</Frame> 
+				</Frame>
+			</StackLayout>
+
+          	
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

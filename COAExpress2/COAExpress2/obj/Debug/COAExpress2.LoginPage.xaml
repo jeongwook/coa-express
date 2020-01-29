@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="COAExpress2.LoginPage">
+	<ContentPage.Content>
+		<RelativeLayout BackgroundColor="White">
+
+			<!-- Logo Image -->
+			<Image Source="ispace-brand-maximized.png"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            		Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            		Property=Width,Factor=.2,Constant=0}"
+       	 		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.6,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.3,Constant=0}"> 
+			</Image>
+
+			<!-- Image -->
+			<Image Source="x_111951.jpg" x:Name="mainPicture" 
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            		Property=Height,Factor=.20,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            		Property=Width,Factor=0,Constant=0}"
+       	 		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}"> 
+			</Image>
+
+			<!-- Login Info-->
+			<Frame BackgroundColor="#47C3D3" Opacity=".80" x:Name="loginInfo"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToView,ElementName=mainPicture,Property=Y,Factor=3,Constant=0}"
+        		RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.7,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.2,Constant=0}">
+				<RelativeLayout>
+						<StackLayout VerticalOptions="CenterAndExpand"
+							RelativeLayout.XConstraint="{ConstraintExpression
+								Type=RelativeToParent,Property=Width,Factor=.2,Constant=0}"
+							RelativeLayout.YConstraint="{ConstraintExpression
+								Type=RelativeToParent,Property=Height,Factor=.15,Constant=0}"
+							RelativeLayout.WidthConstraint="{ConstraintExpression 
+								Type=RelativeToParent,Property=Width,Factor=.6,Constant=0}"
+							RelativeLayout.HeightConstraint="{ConstraintExpression
+								Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}">
+							<Entry x:Name="usernameEntry" Placeholder="Username" BackgroundColor="White" TextColor="Black"/> 
+						 	<!--Add usernameEntry inside a grid? and add padding-->
+							<Entry x:Name="passwordEntry" Placeholder="Password" BackgroundColor="White" TextColor="Black" IsPassword="true" />
+						</StackLayout>
+				</RelativeLayout>
+			</Frame>
+
+			<!-- Login Button -->
+			<Button Text="Login" Clicked="OnLoginButtonClicked" BackgroundColor="#47C3D3" TextColor="White"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.35,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.05,Constant=0}"/>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

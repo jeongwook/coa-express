@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="COAExpress2.TrainingDate" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<RelativeLayout BackgroundColor="White">
+
+			<!-- Logo Image -->
+			<Image Source="ispace-brand-maximized.png" Opacity="1"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.2,Constant=0}"
+       	 		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.6,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.3,Constant=0}"> 
+			</Image>
+
+			<!-- Background Image -->
+			<Image Source="trifecta-wallpaper-mobile-01.jpg" Opacity=".5"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+			</Image>
+
+			<!-- Next Page Button -->
+			<Button Text="Next" Clicked="OnNextPageClicked" BackgroundColor="#47C3D3" TextColor="White"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.52,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.05,Constant=0}"/>
+
+			<!-- Previous Page Button -->
+			<Button Text="Previous" Clicked="OnPreviousPageClicked" BackgroundColor="#47C3D3" TextColor="White"
+				RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.85,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.18,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.05,Constant=0}"/>
+
+            <!-- Main Container -->
+            <StackLayout 
+            	RelativeLayout.YConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Height,Factor=.20,Constant=0}"
+				RelativeLayout.XConstraint="{ConstraintExpression 
+					Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"
+        		RelativeLayout.WidthConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Width,Factor=.7,Constant=0}"
+        		RelativeLayout.HeightConstraint="{ConstraintExpression
+            		Type=RelativeToParent,Property=Height,Factor=.6,Constant=0}">
+
+				<Label Text="Select the day the training is happening and how you would like to receive COAs for signature" HorizontalOptions="Center"/>
+
+
+            	<RelativeLayout VerticalOptions="CenterAndExpand" >
+					
+					<!-- Pulldowns Text -->
+					<StackLayout x:Name="pullDownTexts" 
+						RelativeLayout.XConstraint="{ConstraintExpression
+							Type=RelativeToParent,Property=Width,Factor=.1,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression
+							Type=RelativeToParent,Property=Y,Factor=.1,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression 
+							Type=RelativeToParent,Property=Width,Factor=.3,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression
+            				Type=RelativeToParent,Property=Height,Factor=.2,Constant=0}">
+						<StackLayout VerticalOptions="CenterAndExpand">
+							<Label Text="Training Date:" Margin="0,0,0,10"/>
+						</StackLayout>
+					</StackLayout>
+					
+					<!-- Pulldowns -->
+					<StackLayout x:Name="pullDowns"
+						RelativeLayout.XConstraint="{ConstraintExpression
+							Type=RelativeToParent,Property=Width,Factor=.4,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression
+							Type=RelativeToParent,Property=Y,Factor=.1,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression 
+							Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression
+            				Type=RelativeToParent,Property=Height,Factor=.2,Constant=0}">
+						<StackLayout VerticalOptions="CenterAndExpand">
+							<DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+         						<DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+         							<!--<DatePicker.MinimumDate>
+            							<sys:DateTime x:FactoryMethod="Parse">
+               								<x:Arguments>
+                  								<x:String>Jan 1 2000</x:String>
+              								</x:Arguments>
+            							</sys:DateTime>
+         							</DatePicker.MinimumDate>
+         							<DatePicker.MaximumDate>
+            							<sys:DateTime x:FactoryMethod="Parse">
+               								<x:Arguments>
+                  								<x:String>Dec 31 2050</x:String>
+               								</x:Arguments>
+            							</sys:DateTime>
+         							</DatePicker.MaximumDate>-->
+     						 </DatePicker>
+						</StackLayout>
+					</StackLayout>
+
+					<StackLayout 
+						RelativeLayout.XConstraint="{ConstraintExpression
+							Type=RelativeToView,ElementName=pullDowns,Property=Width,Factor=0,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression
+							Type=RelativeToView,ElementName=pullDowns,Property=Y,Factor=10,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression 
+							Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression
+            				Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}">
+						<Label Text="Signature Documentation Method" HorizontalOptions="Center" Margin="0,0,0,20"/>
+						<Frame BackgroundColor="#47C3D3" Opacity=".8">
+							<ListView x:Name="listView" SeparatorVisibility="None">
+							</ListView> 
+						</Frame>
+					</StackLayout>
+					
+				</RelativeLayout>
+				
+			</StackLayout>
+			
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>
